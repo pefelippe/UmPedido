@@ -3,6 +3,14 @@ import { useTranslation } from "react-i18next";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
+interface PlanData {
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  buttonText: string;
+}
+
 interface PricingCardProps {
   plan: "free" | "basic" | "professional";
   isPopular?: boolean;
@@ -11,7 +19,7 @@ interface PricingCardProps {
 export function PricingCard({ plan, isPopular = false }: PricingCardProps) {
   const { t } = useTranslation();
 
-  const planData = t(`pricing.plans.${plan}`, { returnObjects: true });
+  const planData = t(`pricing.plans.${plan}`, { returnObjects: true }) as PlanData;
 
   return (
     <div

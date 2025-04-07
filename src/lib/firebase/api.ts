@@ -9,7 +9,6 @@ import {
   query,
   where,
   orderBy,
-  limit,
   serverTimestamp,
 } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';

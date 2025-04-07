@@ -1,4 +1,3 @@
-import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";

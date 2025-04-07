@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
@@ -15,7 +15,6 @@ interface PricingPlan {
 export function Pricing() {
   const { t } = useTranslation();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const getFeatures = (planKey: string): string[] => {
     const features = t(`pricing.plans.${planKey}.features`, { returnObjects: true });

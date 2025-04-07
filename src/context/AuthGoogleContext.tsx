@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
+import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
 import { createContext, ReactNode, useContext, useState, useEffect } from "react";
 import { useAuth } from "@/hooks/use-auth";
 

@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { usersApi, productsApi, ordersApi, categoriesApi } from './api';
-import type { User, Product, Order, Category } from './types';
+import type { User, Product, Order } from './types';
 
 // User Hooks
 export const useUser = (userId: string) => {
