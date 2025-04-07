@@ -33,7 +33,7 @@ function SidePanel() {
     <>
       <div className="hidden md:flex flex-col h-screen w-72 border-r border-gray-800 fixed left-0 top-0 bg-gray-900">
         <div className="p-6 border-b border-gray-800 mb-6">
-          <h1 className="text-2xl font-bold text-white font-extrabold">UmPedido</h1>
+          <h1 className="text-2xl font-bold text-white font-extrabold">{t("header.appName")}</h1>
         </div>
         
         <nav className="flex-1 px-4 space-y-10 overflow-y-auto">
@@ -171,7 +171,7 @@ function SidePanel() {
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 md:hidden">
           <div className="fixed left-0 top-0 bottom-0 w-72 bg-gray-900 shadow-lg">
             <div className="p-6 flex justify-between items-center border-b border-gray-800">
-              <h1 className="text-xl font-bold text-white">UmPedido</h1>
+              <h1 className="text-xl font-bold text-white">{t("header.appName")}</h1>
               <Button variant="ghost" onClick={toggleMenu} className="text-gray-400 hover:text-white">
                 <X size={24} />
               </Button>

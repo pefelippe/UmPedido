@@ -12,6 +12,7 @@ export default {
       allRightsReserved: "All rights reserved.",
     },
     header: {
+      appName: "UmPedido",
       home: "Home",
       orders: "Orders",
       services: "Services",
