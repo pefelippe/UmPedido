@@ -1,9 +1,9 @@
 export default {
   translations: {
-    pageTitle: "MyStore - Order management and personalized virtual store.",
+    pageTitle: "ZapStore - Order management and personalized virtual store.",
     footer: {
-      message: "MyStore © 2024. All rights reserved.",
-      companyName: "MyStore",
+      message: "ZapStore © 2024. All rights reserved.",
+      companyName: "ZapStore",
       quickLinks: "Quick Links",
       about: "About",
       services: "Services",
@@ -45,7 +45,7 @@ export default {
     hero: {
       title: "Automate your sales, access charts, and earn more money.",
       description:
-        "Offer quick, convenient, and profitable service with MyStore, managing orders, automating sales, and much more.",
+        "Offer quick, convenient, and profitable service with ZapStore, managing orders, automating sales, and much more.",
     },
     services: {
       title: "Our Services",
@@ -196,19 +196,31 @@ export default {
       termsText: "By signing in, you agree to our",
       termsLink: "Terms of Service",
       features: {
-        title: "Why choose our platform?",
-        subtitle: "Discover the benefits of managing your orders with us",
+        title: "Features that power your business",
+        subtitle: "Discover how ZapStore can transform your operation",
         realTimeOrders: {
-          title: "Real-time Order Management",
-          description: "Track and manage orders instantly as they come in"
+          title: "Real-time Orders",
+          description: "Track and manage orders instantly"
         },
         analytics: {
           title: "Advanced Analytics",
-          description: "Get detailed insights about your business performance"
+          description: "Get detailed insights about your business"
         },
         timeSaving: {
-          title: "Save Time",
-          description: "Automate processes and focus on what matters most"
+          title: "Time Saving",
+          description: "Automate processes and focus on what matters"
+        },
+        security: {
+          title: "Total Security",
+          description: "Your data protected with advanced encryption"
+        },
+        mobile: {
+          title: "Mobile App",
+          description: "Manage your business from anywhere"
+        },
+        payments: {
+          title: "Integrated Payments",
+          description: "Accept multiple payment methods"
         }
       }
     },
@@ -221,9 +233,9 @@ export default {
       title: "Frequently Asked Questions",
       description:
         "If you want to use your data to create a GPT-powered chatbot for your website or use Stable Diffusion to generate images on your Discord server, we have what you need. Feel free to contact us if you have any questions not covered here.",
-      whatCanIBuild: "What can I build with MyStore?",
+      whatCanIBuild: "What can I build with ZapStore?",
       whatCanIBuildAnswer:
-        "With MyStore, you can create an order management system and a personalized virtual store for your business.",
+        "With ZapStore, you can create an order management system and a personalized virtual store for your business.",
       useWithoutPayment:
         "Posso usar o Meu Rango sem inserir minhas informações de pagamento?",
       useWithoutPaymentAnswer:

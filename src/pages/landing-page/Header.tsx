@@ -29,12 +29,8 @@ export function HeaderLandingPage() {
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 w-full">
           <div className="flex justify-start items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-            </div>
-            <span className="text-2xl font-bold text-gray-900">My Store</span>
+
+            <span className="text-2xl font-bold text-gray-900">ZapStore</span>
           </div>
           <nav className="hidden md:flex space-x-10">
             <ScrollLink
@@ -91,7 +87,7 @@ export function HeaderLandingPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
                 </div>
-                <span className="text-2xl font-bold text-gray-900">My Store</span>
+                <span className="text-2xl font-bold text-gray-900">ZapStore</span>
               </div>
               <Button
                 variant="ghost"

@@ -15,7 +15,7 @@ function App() {
   return (
     <I18nextProvider i18n={i18n}>
       <HelmetProvider>
-        <Helmet titleTemplate="%s - MyStore" />
+        <Helmet titleTemplate="%s - ZapStore" />
         <Toaster richColors />
         <QueryClientProvider client={queryClient}>
           <AuthGoogleProvider>

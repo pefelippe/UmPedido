@@ -53,7 +53,7 @@ export function Sidebar() {
   return (
     <div className="flex h-screen w-64 flex-col border-r bg-white">
       <div className="flex h-16 items-center border-b px-6">
-        <h1 className="text-xl font-semibold">MyStore</h1>
+        <h1 className="text-xl font-semibold">ZapStore</h1>
       </div>
       <nav className="flex-1 space-y-1 p-4">
         {navigationItems.map((item) => {

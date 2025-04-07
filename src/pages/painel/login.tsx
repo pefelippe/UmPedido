@@ -31,11 +31,7 @@ export function Login() {
         <div className="flex-1 bg-[#121212] flex flex-col">
           <div className="flex justify-between items-center p-4">
             <div className="lg:hidden">
-              <img
-                src="/logo-white.svg"
-                alt="MyStore"
-                className="h-8"
-              />
+              <span className="text-white text-xl font-bold">ZapStore</span>
             </div>
             <div className="flex items-center gap-4">
               <LanguageSelector className="text-white" />

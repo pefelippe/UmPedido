@@ -69,8 +69,9 @@ export function FAQ() {
       >
         <div className="flex flex-col md:flex-row gap-16">
           <div className="md:w-2/4">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-blue-800 mb-6">
+            <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight relative inline-block">
               {t("faq.title")}
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></span>
             </h2>
             <p className="mb-8 text-base">{t("faq.description")}</p>
             <button className="bg-blue-500 text-white px-6 py-2 rounded-lg">

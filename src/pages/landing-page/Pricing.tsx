@@ -55,8 +55,9 @@ export function Pricing() {
           viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight relative inline-block">
             {t("pricing.title")}
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {t("pricing.subtitle")}

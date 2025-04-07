@@ -1,9 +1,9 @@
 export default {
   translations: {
-    pageTitle: "MyStore - Gerenciamento de pedidos e loja virtual personalizada.",
+    pageTitle: "ZapStore - Gerenciamento de pedidos e loja virtual personalizada.",
     footer: {
-      message: "MyStore © 2024. Todos os direitos reservados.",
-      companyName: "MyStore",
+      message: "ZapStore © 2024. Todos os direitos reservados.",
+      companyName: "ZapStore",
       quickLinks: "Links Rápidos",
       about: "Sobre",
       services: "Serviços",
@@ -43,9 +43,10 @@ export default {
       message: "Conheça a opinião dos nossos clientes",
     },
     hero: {
-      title: "Automatize suas vendas, acesse gráficos e ganhe mais dinheiro.",
-      description:
-        "Ofereça um atendimento rápido, prático e lucrativo com MyStore, gerenciando pedidos, automatizando vendas e muito mais.",
+      title: "Automatize suas vendas, obtenha insights e ganhe mais dinheiro.",
+      description: "Ofereça um atendimento rápido, prático e lucrativo, gerindo pedidos, automatizando vendas e muito mais.",
+      tryFree: "Testar gratuitamente",
+      seeDemo: "Ver demonstração"
     },
     services: {
       title: "Nossos Serviços",
@@ -196,19 +197,31 @@ export default {
       termsText: "Ao entrar, você concorda com nossos",
       termsLink: "Termos de Serviço",
       features: {
-        title: "Por que escolher nossa plataforma?",
-        subtitle: "Descubra os benefícios de gerenciar seus pedidos conosco",
+        title: "Recursos que impulsionam seu negócio",
+        subtitle: "Descubra como o ZapStore pode transformar sua operação",
         realTimeOrders: {
-          title: "Gerenciamento de Pedidos em Tempo Real",
-          description: "Acompanhe e gerencie pedidos instantaneamente conforme chegam"
+          title: "Pedidos em Tempo Real",
+          description: "Acompanhe e gerencie pedidos instantaneamente"
         },
         analytics: {
           title: "Análises Avançadas",
-          description: "Obtenha insights detalhados sobre o desempenho do seu negócio"
+          description: "Obtenha insights detalhados sobre seu negócio"
         },
         timeSaving: {
-          title: "Economize Tempo",
-          description: "Automatize processos e foque no que mais importa"
+          title: "Economia de Tempo",
+          description: "Automatize processos e foque no que importa"
+        },
+        security: {
+          title: "Segurança Total",
+          description: "Seus dados protegidos com criptografia avançada"
+        },
+        mobile: {
+          title: "Aplicativo Móvel",
+          description: "Gerencie seu negócio de qualquer lugar"
+        },
+        payments: {
+          title: "Pagamentos Integrados",
+          description: "Aceite diversos métodos de pagamento"
         }
       }
     },
@@ -222,9 +235,9 @@ export default {
       title: "Perguntas Frequentes",
       description:
         "Se você deseja usar seus dados para criar um chatbot alimentado por GPT para seu site ou usar o Stable Diffusion para gerar imagens em seu servidor Discord, nós temos o que você precisa. Sinta-se à vontade para entrar em contato conosco se tiver alguma dúvida que não esteja coberta aqui.",
-      whatCanIBuild: "O que posso criar com o MyStore?",
+      whatCanIBuild: "O que posso criar com o ZapStore?",
       whatCanIBuildAnswer:
-        "Com o MyStore, você pode criar um sistema de gerenciamento de pedidos e uma loja virtual personalizada para o seu negócio.",
+        "Com o ZapStore, você pode criar um sistema de gerenciamento de pedidos e uma loja virtual personalizada para o seu negócio.",
       howItWorks: "Como funciona o sistema de gerenciamento de pedidos do Meu Rango?",
       howItWorksAnswer:
         "O Meu Rango oferece um sistema completo para gerenciar pedidos online, incluindo um cardápio digital personalizado, processamento de pedidos em tempo real e análise de vendas. Os clientes fazem pedidos através do seu cardápio digital, e você os gerencia em um painel fácil de usar.",

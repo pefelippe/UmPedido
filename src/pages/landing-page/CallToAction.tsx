@@ -29,9 +29,10 @@ export function CallToAction() {
           initial={{ y: -20, opacity: 0 }}
           animate={hasAnimated ? { y: 0, opacity: 1 } : {}}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-5xl md:text-6xl font-bold mb-4"
+          className="text-5xl md:text-6xl font-bold mb-4 relative inline-block"
         >
           {t("callToAction.title")}
+          <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></span>
         </motion.h2>
         <motion.p
           initial={{ y: -20, opacity: 0 }}
