@@ -2,15 +2,21 @@ import { createBrowserRouter, Outlet, Navigate, useLocation } from "react-router
 import { DashboardLayout } from "@/components/dashboard-layout";
 import { ProtectedRoute } from "@/components/protected-route";
 import LandingPage from "@/pages";
-import { Login } from "@/pages/painel/login";
-import { Dashboard } from "@/pages/dashboard";
-import { Orders } from "@/pages/dashboard/orders";
-import { Users } from "@/pages/dashboard/users";
-import { Analytics } from "@/pages/dashboard/analytics";
-import { Settings } from "@/pages/dashboard/settings";
+import { Login } from "@/pages/app/login";
+import Dashboard from "@/pages/app/dashboard";
+import Orders from "@/pages/app/orders";
+import Store from "@/pages/app/store";
+import Products from "@/pages/app/products";
+import Menu from "@/pages/app/menu";
+import Customers from "@/pages/app/customers";
+import Payments from "@/pages/app/payments";
+import Reports from "@/pages/app/reports";
+import Notifications from "@/pages/app/notifications";
+import Help from "@/pages/app/help";
+import Settings from "@/pages/app/settings";
 import { useAuth } from "@/hooks/use-auth";
 
-import Header from "./components/header";
+import SidePanel from "./components/header";
 import Logo from "./components/Logo";
 import { NotFound } from "./pages/404";
 
@@ -18,16 +24,18 @@ export function AppLayout() {
   const { user } = useAuth();
   const location = useLocation();
   
-  if (!user && location.pathname !== '/painel/login') {
-    return <Navigate to="/painel/login" replace />;
+  if (!user && location.pathname !== '/app/login') {
+    return <Navigate to="/app/login" replace />;
   }
 
   return (
-    <div className="flex min-h-screen flex-col antialiased ">
-      <Header />
-      <div className="px-8 py-4 h-full w-full">
-        <Outlet />
-      </div>
+    <div className="flex min-h-screen antialiased">
+      <SidePanel />
+      <main className="flex-1 md:ml-64">
+        <div className="px-8 py-4 h-full w-full">
+          <Outlet />
+        </div>
+      </main>
     </div>
   );
 }
@@ -36,8 +44,8 @@ export function AuthLayout() {
   const { user } = useAuth();
   const location = useLocation();
   
-  if (user && location.pathname === '/painel/login') {
-    return <Navigate to="/painel/dashboard" replace />;
+  if (user && location.pathname === '/app/login') {
+    return <Navigate to="/app/dashboard" replace />;
   }
 
   return (
@@ -64,19 +72,36 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/painel",
+    path: "/app",
     element: <AppLayout />,
     errorElement: <NotFound />,
     children: [
-      { path: "/painel/orders", element: <Orders /> },
-      { path: "/painel/dashboard", element: <Dashboard /> },
+      // Dashboard Section
+      { path: "/app/dashboard", element: <Dashboard /> },
+      { path: "/app/insights", element: <Dashboard /> },
+      
+      // Store Management Section
+      { path: "/app/store", element: <Store /> },
+      { path: "/app/products", element: <Products /> },
+      { path: "/app/orders", element: <Orders /> },
+      { path: "/app/menu", element: <Menu /> },
+      
+      // Business Section
+      { path: "/app/customers", element: <Customers /> },
+      { path: "/app/payments", element: <Payments /> },
+      { path: "/app/reports", element: <Reports /> },
+      
+      // Support Section
+      { path: "/app/notifications", element: <Notifications /> },
+      { path: "/app/help", element: <Help /> },
+      { path: "/app/settings", element: <Settings /> },
     ],
   },
   {
-    path: "/painel",
+    path: "/app",
     element: <AuthLayout />,
     errorElement: <NotFound />,
-    children: [{ path: "/painel/login", element: <Login /> }],
+    children: [{ path: "/app/login", element: <Login /> }],
   },
   {
     path: "/login",
@@ -98,36 +123,6 @@ export const router = createBrowserRouter([
       <ProtectedRoute>
         <DashboardLayout>
           <Orders />
-        </DashboardLayout>
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/dashboard/users",
-    element: (
-      <ProtectedRoute>
-        <DashboardLayout>
-          <Users />
-        </DashboardLayout>
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/dashboard/analytics",
-    element: (
-      <ProtectedRoute>
-        <DashboardLayout>
-          <Analytics />
-        </DashboardLayout>
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/dashboard/settings",
-    element: (
-      <ProtectedRoute>
-        <DashboardLayout>
-          <Settings />
         </DashboardLayout>
       </ProtectedRoute>
     ),

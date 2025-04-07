@@ -51,7 +51,7 @@ export function CallToAction() {
             size="lg"
             className="max-w-sm mx-auto rounded-xl text-md transition-colors duration-300"
           >
-            <Link to="painel/login">{t("callToAction.buttonText")}</Link>
+            <Link to="app/login">{t("callToAction.buttonText")}</Link>
           </Button>
         </motion.div>
       </div>

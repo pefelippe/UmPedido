@@ -16,8 +16,15 @@ const i18nConfig = {
   interpolation: {
     escapeValue: false,
   },
+  react: {
+    useSuspense: false,
+  },
+  debug: process.env.NODE_ENV === "development",
 };
 
-i18n.use(LanguageDetector).use(initReactI18next).init(i18nConfig);
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init(i18nConfig);
 
 export default i18n;

@@ -67,7 +67,7 @@ export function HeaderLandingPage() {
             <LanguageSelector className="w-[120px]" />
             <Button variant="default" className="bg-blue-600 hover:bg-blue-700 text-white py-6 px-5 text-md rounded-xl">
               <Link
-                to="/painel/login"
+                to="/app/login"
                 className="flex items-center justify-center"
                 onClick={toggleMenu}
               >
@@ -137,7 +137,7 @@ export function HeaderLandingPage() {
                   className="w-full bg-blue-600 text-white py-8 text-2xl hover:bg-blue-700"
                 >
                   <Link
-                    to="/painel/login"
+                    to="/app/login"
                     className="flex items-center justify-center text-2xl"
                     onClick={toggleMenu}
                   >

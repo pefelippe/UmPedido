@@ -3,10 +3,8 @@ import { useTranslation } from "react-i18next";
 import { HeaderLandingPage } from "./landing-page/Header";
 import { Hero } from "./landing-page/Hero";
 import { Pricing } from "./landing-page/Pricing";
-import { FAQ } from "./landing-page/FAQ";
 import { Footer } from "./landing-page/Footer";
 import { Services } from "./landing-page/Services";
-import { CallToAction } from "./landing-page/CallToAction";
 
 function LandingPage() {
   const { t } = useTranslation();
@@ -19,8 +17,6 @@ function LandingPage() {
           <Hero />
           <Services />
           <Pricing />
-          {/* <FAQ /> */}
-          {/* <CallToAction /> */}
         </div>
       </main>
       <Footer />

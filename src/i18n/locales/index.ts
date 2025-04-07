@@ -1,5 +1,5 @@
-import ptBrTranslations from "./ptBR.js";
-import enUsTranslations from "./enUS.js";
+import ptBrTranslations from "./ptBR";
+import enUsTranslations from "./enUS";
 
 export default {
   "pt-BR": ptBrTranslations, // Atente-se a usar as abreviaturas corretas

@@ -10,7 +10,7 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
   const location = useLocation();
 
   if (!user) {
-    return <Navigate to="/painel/login" state={{ from: location }} replace />;
+    return <Navigate to="/app/login" state={{ from: location }} replace />;
   }
 
   return <>{children}</>;

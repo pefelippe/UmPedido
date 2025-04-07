@@ -7,8 +7,20 @@ interface AuthState {
     id: string;
     email: string;
     name: string;
+    store?: {
+      id: string;
+      name: string;
+    };
   } | null;
-  login: (user: { id: string; email: string; name: string }) => void;
+  login: (user: { 
+    id: string; 
+    email: string; 
+    name: string;
+    store?: {
+      id: string;
+      name: string;
+    };
+  }) => void;
   logout: () => void;
 }
 

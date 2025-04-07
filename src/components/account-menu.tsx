@@ -21,7 +21,7 @@ function AccountMenu() {
   const handleLogout = async () => {
     try {
       await logOut();
-      navigate("/painel/login");
+      navigate("/app/login");
     } catch (error) {
       console.error("Error during logout:", error);
     }
