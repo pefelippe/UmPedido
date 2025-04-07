@@ -12,7 +12,6 @@ export function Footer() {
             {t("footer.allRightsReserved")}
           </p>
 
-
         </div>
       </div>
     </footer>

@@ -44,6 +44,8 @@ export default {
     },
     hero: {
       title: "Automate your sales, access charts, and earn more money.",
+      tryFree: "Try for free",
+      seeDemo: "See demo",
       description:
         "Offer quick, convenient, and profitable service with ZapStore, managing orders, automating sales, and much more.",
     },
@@ -97,13 +99,13 @@ export default {
     pricing: {
       title: "Plans",
       subtitle: "Choose the plan that best fits your business",
-      button: "Try for free",
+      button: "Choose Plan",
       recommended: "Recommended",
       plans: {
         starter: {
           name: "STARTER",
           description: "The perfect plan for those who are just starting",
-          price: "$20",
+          price: "0",
           features: [
             "Up to 25 products",
             "Up to 5 categories",
@@ -120,7 +122,7 @@ export default {
         super: {
           name: "SUPER",
           description: "Take your business to the next level with additional features",
-          price: "$40",
+          price: "$39.99",
           features: [
             "Up to 60 products",
             "Up to 10 categories",
@@ -139,7 +141,7 @@ export default {
         rich: {
           name: "RICH",
           description: "Take advantage of everything CentralCart has to offer",
-          price: "$70",
+          price: "$49.99",
           features: [
             "Unlimited products",
             "Unlimited categories",
