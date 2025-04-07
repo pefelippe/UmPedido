@@ -73,7 +73,7 @@ export function Hero() {
           className="w-full h-auto max-w-full object-cover rounded-t-3xl shadow-2xl min-h-[260px]
           border-t-4 sm:border-t-8 border-r-4 sm:border-r-8 border-l-4 sm:border-l-8 border-gray-800"
           loading="lazy"
-          src="/public/orders.png"
+          src="/orders.png"
         />
       </motion.div>
     </div>
