@@ -197,7 +197,7 @@ export default {
       termsText: "Ao entrar, você concorda com nossos",
       termsLink: "Termos de Serviço",
       features: {
-        title: "Recursos que impulsionam seu negócio",
+        title: "Impulsione seu negócio",
         subtitle: "Descubra como o ZapStore pode transformar sua operação",
         realTimeOrders: {
           title: "Pedidos em Tempo Real",
