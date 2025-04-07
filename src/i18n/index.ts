@@ -8,6 +8,14 @@ const i18nConfig = {
   resources: translations,
   fallbackLng: "pt-BR",
   defaultNS: "translations",
+  detection: {
+    order: ["localStorage", "navigator"],
+    caches: ["localStorage"],
+    lookupLocalStorage: "i18nextLng",
+  },
+  interpolation: {
+    escapeValue: false,
+  },
 };
 
 i18n.use(LanguageDetector).use(initReactI18next).init(i18nConfig);

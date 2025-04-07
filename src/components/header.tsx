@@ -3,9 +3,12 @@ import { Home, UtensilsCrossedIcon, Menu, X } from "lucide-react";
 import AccountMenu from "./account-menu";
 import NavLink from "./nav-link";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+import { LanguageSelector } from "./language-selector";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -15,15 +18,16 @@ function Header() {
         <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
           <NavLink to="/painel/dashboard">
             <Home />
-            Inicio
+            {t("header.home")}
           </NavLink>
           <NavLink to="/painel/orders">
             <UtensilsCrossedIcon />
-            Pedidos
+            {t("header.orders")}
           </NavLink>
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-4">
+          <LanguageSelector className="max-w-[120px]" />
           <AccountMenu />
         </div>
 
@@ -45,14 +49,15 @@ function Header() {
             <nav className="px-4 py-2 space-y-4">
               <NavLink to="/painel/dashboard" onClick={toggleMenu}>
                 <Home />
-                Inicio
+                {t("header.home")}
               </NavLink>
               <NavLink to="/painel/orders" onClick={toggleMenu}>
                 <UtensilsCrossedIcon />
-                Pedidos
+                {t("header.orders")}
               </NavLink>
             </nav>
-            <div className="px-4 py-2">
+            <div className="px-4 py-2 space-y-4">
+              <LanguageSelector className="w-full" />
               <AccountMenu />
             </div>
           </div>

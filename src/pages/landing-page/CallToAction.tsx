@@ -24,7 +24,7 @@ export function CallToAction() {
       transition={{ duration: 0.5 }}
       className="text-white"
     >
-      <div className="px-32 mx-auto text-center bg-primary py-24 flex flex-col">
+      <div className="px-32 mx-auto text-center bg-primary py-48 flex flex-col">
         <motion.h2
           initial={{ y: -20, opacity: 0 }}
           animate={hasAnimated ? { y: 0, opacity: 1 } : {}}

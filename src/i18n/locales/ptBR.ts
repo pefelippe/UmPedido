@@ -1,10 +1,9 @@
 export default {
   translations: {
-    pageTitle:
-      "Meu Rango - Gerenciamento de pedidos e cardápio virtual personalizado.",
+    pageTitle: "MyStore - Gerenciamento de pedidos e loja virtual personalizada.",
     footer: {
-      message: "Meu Rango © 2024. Todos os direitos reservados.",
-      companyName: "Meu Rango",
+      message: "MyStore © 2024. Todos os direitos reservados.",
+      companyName: "MyStore",
       quickLinks: "Links Rápidos",
       about: "Sobre",
       services: "Serviços",
@@ -14,10 +13,15 @@ export default {
     },
     header: {
       home: "Início",
-      about: "Sobre",
+      orders: "Pedidos",
       services: "Serviços",
+      pricing: "Preços",
+      faq: "FAQ",
+      about: "Sobre",
       contact: "Contato",
       accessPanel: "Acessar Painel",
+      storeProfile: "Perfil da loja",
+      logout: "Sair",
     },
     testimonial: {
       message: "Conheça a opinião dos nossos clientes",
@@ -25,38 +29,37 @@ export default {
     hero: {
       title: "Automatize suas vendas, acesse gráficos e ganhe mais dinheiro.",
       description:
-        "Ofereça um atendimento rápido, prático e lucrativo, gerindo pedidos, automatizando vendas e muito mais.",
+        "Ofereça um atendimento rápido, prático e lucrativo com MyStore, gerenciando pedidos, automatizando vendas e muito mais.",
     },
     services: {
       title: "Nossos Serviços",
       orderManagement: {
         title: "Gerenciamento de Pedidos",
         subtitle:
-          "Gerencie e processe pedidos de clientes de forma eficiente com nosso sistema intuitivo.",
+          "Gerencie e processe pedidos de clientes com eficiência através do nosso sistema intuitivo.",
         features: [
-          "Rastreamento de pedidos em tempo real",
+          "Acompanhamento de pedidos em tempo real",
           "Status de pedidos personalizáveis",
           "Notificações automáticas de pedidos",
         ],
       },
-      menuCustomization: {
-        title: "Personalização de Cardápio",
+      storeCustomization: {
+        title: "Personalização da Loja",
         subtitle:
-          "Crie e gerencie seu cardápio digital com facilidade, exibindo seus pratos aos clientes.",
+          "Personalize sua loja digital com facilidade, destacando seus produtos e serviços.",
         features: [
-          "Criação e edição fácil de itens do menu",
+          "Criação e edição fácil de produtos",
           "Gerenciamento de categorias",
-          "Ofertas especiais e promoções",
+          "Ofertas e promoções especiais",
         ],
       },
       analytics: {
-        title: "Análises e Insights",
+        title: "Análise e Insights",
         subtitle:
-          "Obtenha insights valiosos sobre o desempenho do seu restaurante com nossas ferramentas de análise.",
+          "Obtenha insights valiosos sobre o desempenho do seu negócio com nossas ferramentas de análise.",
         features: [
-          "Relatórios de vendas e tendências",
           "Análise de comportamento do cliente",
-          "Gerenciamento de estoque",
+          "Gestão de estoque",
         ],
       },
     },
@@ -106,58 +109,106 @@ export default {
       totalPrice: "Total do pedido",
     },
     pricing: {
-      title: "Nossos Planos",
-      noCreditCard: "Sem necessidade de cartão de crédito",
-      introduction:
-        "Comece com nosso plano Básico e, conforme seu negócio cresce, faça o upgrade para um de nossos planos pagos para obter mais recursos, gerenciar mais pedidos, e receber suporte dedicado.",
-      choosePlan: "Escolher Plano",
-      perMonth: "/mês",
+      title: "Planos",
+      subtitle: "Escolha o plano que melhor se adapta ao seu negócio",
+      button: "Testar gratuitamente",
+      recommended: "Recomendamos",
       plans: {
-        basic: {
-          name: "Básico",
-          price: "R$0,00",
-          description: "Ideal para pequenos negócios que estão começando",
+        starter: {
+          name: "STARTER",
+          description: "O plano perfeito para você que está começando",
+          price: "R$20",
           features: [
-            "Cardápio digital básico",
-            "Gerenciamento de pedidos",
-            "Suporte por e-mail",
-            "Análise de vendas básica",
-            "Integração com sistemas de entrega",
-            "Até 100 pedidos/mês",
-          ],
+            "Até 25 produtos",
+            "Até 5 categorias",
+            "Até 1 sub-usuário",
+            "Publicações ilimitadas",
+            "Descontos ilimitados",
+            "Estatísticas avançadas",
+            "Todos os widgets",
+            "Todos os métodos de pagamento",
+            "Entregas instantâneas",
+            "Limite de R$2.000,00 mensal"
+          ]
         },
-        professional: {
-          name: "Profissional",
-          price: "R$19,90",
-          description: "Perfeito para restaurantes em crescimento",
+        super: {
+          name: "SUPER",
+          description: "Aumente o nível do seu negócio com recursos adicionais",
+          price: "R$40",
           features: [
-            "Todos os recursos do plano Básico",
-            "Suporte prioritário",
-            "Personalização do cardápio baseada em IA",
-            "Suporte 24/7",
-            "Pedidos ilimitados",
-          ],
+            "Até 60 produtos",
+            "Até 10 categorias",
+            "Até 3 sub-usuários",
+            "Publicações ilimitadas",
+            "Descontos ilimitados",
+            "Estatísticas avançadas",
+            "Todos os widgets",
+            "Todos os métodos de pagamento",
+            "Entregas instantâneas",
+            "Limite de R$4.000,00 mensal",
+            "Use seu próprio domínio",
+            "Integração com Discord"
+          ]
         },
-      },
+        rich: {
+          name: "RICH",
+          description: "Aproveite tudo o que a CentralCart tem para oferecer",
+          price: "R$70",
+          features: [
+            "Produtos ilimitados",
+            "Categorias ilimitadas",
+            "Até 6 sub-usuários",
+            "Publicações ilimitadas",
+            "Descontos ilimitados",
+            "Estatísticas avançadas",
+            "Todos os widgets",
+            "Todos os métodos de pagamento",
+            "Entregas instantâneas",
+            "Sem limite de faturamento",
+            "Use seu próprio domínio",
+            "Integração com Discord",
+            "Editor de template exclusivo"
+          ]
+        }
+      }
     },
     login: {
       title: "Acesse seu painel.",
-      subtitle: "Faça login para gerenciar seu restaurante.",
+      subtitle: "Entre para gerenciar seus pedidos.",
       signInGoogle: "Entrar com Google",
       demonstrationMode: "Modo Demonstração",
-      termsText: "Ao fazer login, você concorda com nossos",
+      termsText: "Ao entrar, você concorda com nossos",
       termsLink: "Termos de Serviço",
+      features: {
+        title: "Por que escolher nossa plataforma?",
+        subtitle: "Descubra os benefícios de gerenciar seus pedidos conosco",
+        realTimeOrders: {
+          title: "Gerenciamento de Pedidos em Tempo Real",
+          description: "Acompanhe e gerencie pedidos instantaneamente conforme chegam"
+        },
+        analytics: {
+          title: "Análises Avançadas",
+          description: "Obtenha insights detalhados sobre o desempenho do seu negócio"
+        },
+        timeSaving: {
+          title: "Economize Tempo",
+          description: "Automatize processos e foque no que mais importa"
+        }
+      }
     },
     callToAction: {
       title: "Pronto para começar?",
       description:
         "Junte-se a milhares de empresas que já usam nossa plataforma.",
-      buttonText: "Inscreva-se agora",
+      buttonText: "Acesse a plataforma.",
     },
     faq: {
       title: "Perguntas Frequentes",
       description:
-        "Aqui estão algumas das perguntas mais comuns sobre o Meu Rango, nosso sistema de gerenciamento de pedidos para restaurantes. Se você não encontrar a resposta que procura, não hesite em entrar em contato conosco.",
+        "Se você deseja usar seus dados para criar um chatbot alimentado por GPT para seu site ou usar o Stable Diffusion para gerar imagens em seu servidor Discord, nós temos o que você precisa. Sinta-se à vontade para entrar em contato conosco se tiver alguma dúvida que não esteja coberta aqui.",
+      whatCanIBuild: "O que posso criar com o MyStore?",
+      whatCanIBuildAnswer:
+        "Com o MyStore, você pode criar um sistema de gerenciamento de pedidos e uma loja virtual personalizada para o seu negócio.",
       howItWorks: "Como funciona o sistema de gerenciamento de pedidos do Meu Rango?",
       howItWorksAnswer:
         "O Meu Rango oferece um sistema completo para gerenciar pedidos online, incluindo um cardápio digital personalizado, processamento de pedidos em tempo real e análise de vendas. Os clientes fazem pedidos através do seu cardápio digital, e você os gerencia em um painel fácil de usar.",
@@ -183,6 +234,14 @@ export default {
       cancel: "Cancelar",
       approve: "Aprovar",
       customer: "Cliente",
+    },
+    sidebar: {
+      home: "Início",
+      orders: "Pedidos",
+      users: "Usuários",
+      analytics: "Análises",
+      settings: "Configurações",
+      logout: "Sair",
     },
   },
 };

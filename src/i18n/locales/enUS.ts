@@ -1,9 +1,9 @@
 export default {
   translations: {
-    pageTitle: "MeuRango - Order management and personalized virtual menu.",
+    pageTitle: "MyStore - Order management and personalized virtual store.",
     footer: {
-      message: "MeuRango © 2024. All rights reserved.",
-      companyName: "MeuRango",
+      message: "MyStore © 2024. All rights reserved.",
+      companyName: "MyStore",
       quickLinks: "Quick Links",
       about: "About",
       services: "Services",
@@ -13,10 +13,15 @@ export default {
     },
     header: {
       home: "Home",
-      about: "About",
+      orders: "Orders",
       services: "Services",
+      pricing: "Pricing",
+      faq: "FAQ",
+      about: "About",
       contact: "Contact",
       accessPanel: "Access Panel",
+      storeProfile: "Store Profile",
+      logout: "Logout",
     },
     testimonial: {
       message: "Discover what our customers think",
@@ -24,7 +29,7 @@ export default {
     hero: {
       title: "Automate your sales, access charts, and earn more money.",
       description:
-        "Offer quick, convenient, and profitable service with Zappi, managing orders, automating sales, and much more.",
+        "Offer quick, convenient, and profitable service with MyStore, managing orders, automating sales, and much more.",
     },
     services: {
       title: "Our Services",
@@ -38,12 +43,12 @@ export default {
           "Automated order notifications",
         ],
       },
-      menuCustomization: {
-        title: "Menu Customization",
+      storeCustomization: {
+        title: "Store Customization",
         subtitle:
-          "Create and manage your digital menu with ease, showcasing your dishes to customers.",
+          "Customize your digital store with ease, highlighting your products and services.",
         features: [
-          "Easy menu item creation and editing",
+          "Easy product creation and editing",
           "Category management",
           "Special offers and promotions",
         ],
@@ -51,9 +56,8 @@ export default {
       analytics: {
         title: "Analytics and Insights",
         subtitle:
-          "Gain valuable insights into your restaurant's performance with our analytics tools.",
+          "Gain valuable insights into your business performance with our analytics tools.",
         features: [
-          "Sales reports and trends",
           "Customer behavior analysis",
           "Inventory management",
         ],
@@ -75,50 +79,68 @@ export default {
       averageOrderValue: "Average order value",
     },
     pricing: {
-      title: "Our Plans",
-      noCreditCard: "No credit card required",
-      introduction: "Meu Rango allows you to efficiently manage your online orders. Start with our Basic plan and, as your business grows, upgrade to one of our paid plans for more features, manage more orders, and receive dedicated support.",
-      choosePlan: "Choose Plan",
-      perMonth: "/month",
+      title: "Plans",
+      subtitle: "Choose the plan that best fits your business",
+      button: "Try for free",
+      recommended: "Recommended",
       plans: {
-        basic: {
-          name: "Basic",
-          price: "$19.90",
-          description: "Ideal for small businesses just starting out",
+        starter: {
+          name: "STARTER",
+          description: "The perfect plan for those who are just starting",
+          price: "$20",
           features: [
-            "Basic digital menu",
-            "Order management",
-            "Email support",
-            "Up to 100 orders/month",
-          ],
+            "Up to 25 products",
+            "Up to 5 categories",
+            "Up to 1 sub-user",
+            "Unlimited publications",
+            "Unlimited discounts",
+            "Advanced statistics",
+            "All widgets",
+            "All payment methods",
+            "Instant deliveries",
+            "Monthly limit of $2,000"
+          ]
         },
-        professional: {
-          name: "Professional",
-          price: "$39.90",
-          description: "Perfect for growing restaurants",
+        super: {
+          name: "SUPER",
+          description: "Take your business to the next level with additional features",
+          price: "$40",
           features: [
-            "All Basic plan features",
-            "Customized menu with photos",
-            "Basic sales analysis",
-            "Integration with delivery systems",
-            "Priority support",
-            "Up to 500 orders/month",
-          ],
+            "Up to 60 products",
+            "Up to 10 categories",
+            "Up to 3 sub-users",
+            "Unlimited publications",
+            "Unlimited discounts",
+            "Advanced statistics",
+            "All widgets",
+            "All payment methods",
+            "Instant deliveries",
+            "Monthly limit of $4,000",
+            "Use your own domain",
+            "Discord integration"
+          ]
         },
-        premium: {
-          name: "Premium",
-          price: "$79.90",
-          description: "For establishments seeking advanced features",
+        rich: {
+          name: "RICH",
+          description: "Take advantage of everything CentralCart has to offer",
+          price: "$70",
           features: [
-            "All Professional plan features",
-            "AI for dish recommendations",
-            "Predictive demand analysis",
-            "AI-based menu customization",
-            "24/7 support",
-            "Unlimited orders",
-          ],
-        },
-      },
+            "Unlimited products",
+            "Unlimited categories",
+            "Up to 6 sub-users",
+            "Unlimited publications",
+            "Unlimited discounts",
+            "Advanced statistics",
+            "All widgets",
+            "All payment methods",
+            "Instant deliveries",
+            "No revenue limit",
+            "Use your own domain",
+            "Discord integration",
+            "Exclusive template editor"
+          ]
+        }
+      }
     },
     orderDetails: {
       order: "Order",
@@ -152,11 +174,27 @@ export default {
     },
     login: {
       title: "Access your panel.",
-      subtitle: "Sign in to manage your restaurant.",
+      subtitle: "Sign in to manage your orders.",
       signInGoogle: "Sign in with Google",
       demonstrationMode: "Demonstration Mode",
       termsText: "By signing in, you agree to our",
       termsLink: "Terms of Service",
+      features: {
+        title: "Why choose our platform?",
+        subtitle: "Discover the benefits of managing your orders with us",
+        realTimeOrders: {
+          title: "Real-time Order Management",
+          description: "Track and manage orders instantly as they come in"
+        },
+        analytics: {
+          title: "Advanced Analytics",
+          description: "Get detailed insights about your business performance"
+        },
+        timeSaving: {
+          title: "Save Time",
+          description: "Automate processes and focus on what matters most"
+        }
+      }
     },
     callToAction: {
       title: "Ready to Get Started?",
@@ -164,12 +202,12 @@ export default {
       buttonText: "Sign Up Now",
     },
     faq: {
-      title: "Perguntas Frequentes",
+      title: "Frequently Asked Questions",
       description:
-        "Se você deseja usar seus dados para criar um chatbot alimentado por GPT para seu site ou usar o Stable Diffusion para gerar imagens em seu servidor Discord, nós temos o que você precisa. Sinta-se à vontade para entrar em contato conosco se tiver alguma dúvida que não esteja coberta aqui.",
-      whatCanIBuild: "O que posso criar com o Meu Rango?",
+        "If you want to use your data to create a GPT-powered chatbot for your website or use Stable Diffusion to generate images on your Discord server, we have what you need. Feel free to contact us if you have any questions not covered here.",
+      whatCanIBuild: "What can I build with MyStore?",
       whatCanIBuildAnswer:
-        "Com o Meu Rango, você pode criar um sistema de gerenciamento de pedidos e um cardápio virtual personalizado para o seu restaurante.",
+        "With MyStore, you can create an order management system and a personalized virtual store for your business.",
       useWithoutPayment:
         "Posso usar o Meu Rango sem inserir minhas informações de pagamento?",
       useWithoutPaymentAnswer:
@@ -184,6 +222,14 @@ export default {
       creditsAnswer:
         "Os créditos do Meu Rango são usados para acessar recursos premium e podem ser adquiridos conforme necessário para expandir as funcionalidades da sua conta.",
       contactUs: "Entre em Contato",
+    },
+    sidebar: {
+      home: "Home",
+      orders: "Orders",
+      users: "Users",
+      analytics: "Analytics",
+      settings: "Settings",
+      logout: "Logout",
     },
   },
 };

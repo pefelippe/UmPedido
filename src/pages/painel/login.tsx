@@ -1,85 +1,92 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import { AuthGoogleContext } from "@/context/AuthGoogleContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { LanguageSelector } from "@/components/language-selector";
 
 export function Login() {
   const { t } = useTranslation();
-  const { signInGoogle, setDemonstrationUser, user } =
-    useContext(AuthGoogleContext);
-
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (user) {
-      navigate("/painel/dashboard");
-    }
-  }, [user, navigate]);
+  const { signInGoogle } = useContext(AuthGoogleContext);
 
   return (
     <>
       <Helmet title={t("login.title")} />
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-800 to-indigo-900 p-4">
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="w-full max-w-md p-8 space-y-8 bg-white rounded-xl shadow-2xl"
-        >
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              {t("login.title")}
-            </h1>
-            <p className="text-gray-600">{t("login.subtitle")}</p>
-          </motion.div>
+      <div className="min-h-screen flex">
+        {/* Left side - Blue gradient with logo and text */}
+        <div className="hidden lg:flex w-1/2 bg-gradient-to-br from-blue-600 to-blue-500 p-12 flex-col">
+          <div className="flex-1 flex items-center justify-center">
+            <div className="max-w-3xl flex flex-col gap-4">
+              <p className="text-white/90 font-medium text-6xl">
+                {t("hero.title")}
+              </p>
+              <p className="text-white/80 text-2xl">
+                {t("hero.description")}
+              </p>
+            </div>
+          </div>
+        </div>
 
-          <div className="space-y-4">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full px-4 py-3 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300 flex items-center justify-center space-x-2"
-              onClick={signInGoogle}
-            >
+        {/* Right side - Login form */}
+        <div className="flex-1 bg-[#121212] flex flex-col">
+          <div className="flex justify-between items-center p-4">
+            <div className="lg:hidden">
               <img
-                src="/google-color-icon.svg"
-                width={20}
-                height={20}
-                alt="Google icon"
-                className="inline-block"
+                src="/logo-white.svg"
+                alt="MyStore"
+                className="h-8"
               />
-              <span>{t("login.signInGoogle")}</span>
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full px-4 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition duration-300"
-              onClick={setDemonstrationUser}
-            >
-              <Link to="/painel/dashboard">{t("login.demonstrationMode")}</Link>
-            </motion.button>
+            </div>
+            <div className="flex items-center gap-4">
+              <LanguageSelector className="text-white" />
+              <a href="/" className="text-white hover:text-white/80 text-sm font-medium">
+                {t("header.home")}
+              </a>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="text-center text-sm text-gray-600"
-          >
-            <p>
-              {t("login.termsText")}{" "}
-              <a href="#" className="text-blue-600 hover:underline">
-                {t("login.termsLink")}
-              </a>
-            </p>
-          </motion.div>
-        </motion.div>
+          <div className="flex-1 flex items-center justify-center p-8">
+            <div className="w-full max-w-md space-y-8">
+              <div className="text-center">
+                <motion.h1
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="text-3xl font-bold text-white mb-2"
+                >
+                  {t("login.title")}
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="text-gray-400"
+                >
+                  {t("login.subtitle")}
+                </motion.p>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="space-y-4"
+              >
+                <button
+                  onClick={signInGoogle}
+                  className="w-full bg-white text-gray-900 rounded-md py-3 px-4 flex items-center justify-center gap-3 font-medium hover:bg-gray-100 transition-colors"
+                >
+                  <img
+                    src="/google-color-icon.svg"
+                    alt="Google"
+                    className="w-5 h-5"
+                  />
+                  {t("login.signInGoogle")}
+                </button>
+              </motion.div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

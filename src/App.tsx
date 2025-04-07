@@ -13,7 +13,7 @@ import "./index.css";
 function App() {
   return (
     <HelmetProvider>
-      <Helmet titleTemplate="%s - Meu Rango" />
+      <Helmet titleTemplate="%s - MyStore" />
       <Toaster richColors />
       <QueryClientProvider client={queryClient}>
         <AuthGoogleProvider>

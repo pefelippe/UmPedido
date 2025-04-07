@@ -1,63 +1,82 @@
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
-import { LogIn, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { LanguageSelector } from "@/components/language-selector";
 
 export function HeaderLandingPage() {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="fixed w-full mx-auto bg-blue-800 text-white z-50">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
+    <header className={`fixed w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white border-b border-gray-200' : 'bg-transparent'
+    }`}>
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 w-full">
-          <div className="flex justify-start items-center gap-8">
-            <Logo />
+          <div className="flex justify-start items-center gap-4">
+            <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+            <span className="text-2xl font-bold text-gray-900">My Store</span>
           </div>
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden md:flex space-x-10">
             <ScrollLink
               to="#services"
               smooth={true}
               duration={500}
-              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
+              className="text-lg font-medium cursor-pointer text-gray-700 hover:text-gray-900 transition-colors"
             >
-              Services
+              {t("header.services")}
             </ScrollLink>
             <ScrollLink
               to="#pricing"
               smooth={true}
               duration={500}
-              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
+              className="text-lg font-medium cursor-pointer text-gray-700 hover:text-gray-900 transition-colors"
             >
-              Pricing
+              {t("header.pricing")}
             </ScrollLink>
             <ScrollLink
               to="#faq"
               smooth={true}
               duration={500}
-              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
+              className="text-lg font-medium cursor-pointer text-gray-700 hover:text-gray-900 transition-colors"
             >
-              FAQ
+              {t("header.faq")}
             </ScrollLink>
           </nav>
-          <div className="hidden md:block">
-            <Button variant="default">
+          <div className="hidden md:flex items-center gap-6">
+            <LanguageSelector className="w-[120px]" />
+            <Button variant="default" className="bg-blue-600 hover:bg-blue-700 text-white py-6 px-5 text-md rounded-xl">
               <Link
                 to="/painel/login"
-                className="flex items-center justify-center gap-2 "
+                className="flex items-center justify-center"
                 onClick={toggleMenu}
               >
-                {t("header.accessPanel")} <LogIn size={24} />
+                {t("header.accessPanel")} →
               </Link>
             </Button>
           </div>
           <div className="md:hidden">
-            <Button variant="ghost" onClick={toggleMenu}>
+            <Button variant="ghost" onClick={toggleMenu} className="text-gray-700">
               <Menu />
             </Button>
           </div>
@@ -66,8 +85,15 @@ export function HeaderLandingPage() {
       {isMenuOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
           <div className="fixed right-0 top-0 bottom-0 w-80 bg-white shadow-lg transform transition-transform duration-300 ease-in-out">
-            <div className="p-6 flex justify-between items-center ">
-              <Logo />
+            <div className="p-6 flex justify-between items-center">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  </svg>
+                </div>
+                <span className="text-2xl font-bold text-gray-900">My Store</span>
+              </div>
               <Button
                 variant="ghost"
                 onClick={toggleMenu}
@@ -76,46 +102,46 @@ export function HeaderLandingPage() {
                 <X size={24} />
               </Button>
             </div>
-            <nav className="px-6 py-8 space-y-6">
-              <Link
-                to="/"
-                className="block text-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 font-medium transition-colors duration-200 p-2 rounded"
-                onClick={toggleMenu}
-              >
-                {t("header.home")}
-              </Link>
-              <Link
-                to="/about"
-                className="block text-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 font-medium transition-colors duration-200 p-2 rounded"
-                onClick={toggleMenu}
-              >
-                {t("header.about")}
-              </Link>
-              <Link
-                to="/services"
+            <nav className="px-6 py-8 space-y-10">
+              <ScrollLink
+                to="#services"
+                smooth={true}
+                duration={500}
                 className="block text-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 font-medium transition-colors duration-200 p-2 rounded"
                 onClick={toggleMenu}
               >
                 {t("header.services")}
-              </Link>
-              <Link
-                to="/contact"
+              </ScrollLink>
+              <ScrollLink
+                to="#pricing"
+                smooth={true}
+                duration={500}
                 className="block text-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 font-medium transition-colors duration-200 p-2 rounded"
                 onClick={toggleMenu}
               >
-                {t("header.contact")}
-              </Link>
-              <div className="pt-6 border-t border-gray-200">
+                {t("header.pricing")}
+              </ScrollLink>
+              <ScrollLink
+                to="#faq"
+                smooth={true}
+                duration={500}
+                className="block text-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 font-medium transition-colors duration-200 p-2 rounded"
+                onClick={toggleMenu}
+              >
+                {t("header.faq")}
+              </ScrollLink>
+              <div className="pt-6 border-t border-gray-200 space-y-4">
+                <LanguageSelector className="w-full" />
                 <Button
                   variant="default"
-                  className="w-full bg-blue-700 text-white py-6 hover:bg-blue-800 text-lg"
+                  className="w-full bg-blue-600 text-white py-8 text-2xl hover:bg-blue-700"
                 >
                   <Link
                     to="/painel/login"
-                    className="flex items-center justify-center gap-2 4"
+                    className="flex items-center justify-center text-2xl"
                     onClick={toggleMenu}
                   >
-                    {t("header.accessPanel")} <LogIn size={20} />
+                    {t("header.accessPanel")}
                   </Link>
                 </Button>
               </div>

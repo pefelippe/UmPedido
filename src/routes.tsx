@@ -1,14 +1,27 @@
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter, Outlet, Navigate, useLocation } from "react-router-dom";
+import { DashboardLayout } from "@/components/dashboard-layout";
+import { ProtectedRoute } from "@/components/protected-route";
+import LandingPage from "@/pages";
+import { Login } from "@/pages/painel/login";
+import { Dashboard } from "@/pages/dashboard";
+import { Orders } from "@/pages/dashboard/orders";
+import { Users } from "@/pages/dashboard/users";
+import { Analytics } from "@/pages/dashboard/analytics";
+import { Settings } from "@/pages/dashboard/settings";
+import { useAuth } from "@/hooks/use-auth";
 
 import Header from "./components/header";
 import Logo from "./components/Logo";
-import LandingPage from "./pages";
 import { NotFound } from "./pages/404";
-import Dashboard from "./pages/painel/dashboard";
-import { Login } from "./pages/painel/login";
-import Orders from "./pages/painel/orders";
 
 export function AppLayout() {
+  const { user } = useAuth();
+  const location = useLocation();
+  
+  if (!user && location.pathname !== '/painel/login') {
+    return <Navigate to="/painel/login" replace />;
+  }
+
   return (
     <div className="flex min-h-screen flex-col antialiased ">
       <Header />
@@ -20,8 +33,15 @@ export function AppLayout() {
 }
 
 export function AuthLayout() {
+  const { user } = useAuth();
+  const location = useLocation();
+  
+  if (user && location.pathname === '/painel/login') {
+    return <Navigate to="/painel/dashboard" replace />;
+  }
+
   return (
-    <div className="relative h-full w-full flex flex-col md:flex-row ">
+    <div className="relative h-full w-full flex flex-col md:flex-row bg-white">
       <div className="fixed h-20 py-6 px-4 sm:px-6 lg:px-8  text-white z-50">
         <Logo />
       </div>
@@ -57,5 +77,59 @@ export const router = createBrowserRouter([
     element: <AuthLayout />,
     errorElement: <NotFound />,
     children: [{ path: "/painel/login", element: <Login /> }],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <ProtectedRoute>
+        <DashboardLayout>
+          <Dashboard />
+        </DashboardLayout>
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/dashboard/orders",
+    element: (
+      <ProtectedRoute>
+        <DashboardLayout>
+          <Orders />
+        </DashboardLayout>
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/dashboard/users",
+    element: (
+      <ProtectedRoute>
+        <DashboardLayout>
+          <Users />
+        </DashboardLayout>
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/dashboard/analytics",
+    element: (
+      <ProtectedRoute>
+        <DashboardLayout>
+          <Analytics />
+        </DashboardLayout>
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/dashboard/settings",
+    element: (
+      <ProtectedRoute>
+        <DashboardLayout>
+          <Settings />
+        </DashboardLayout>
+      </ProtectedRoute>
+    ),
   },
 ]);
